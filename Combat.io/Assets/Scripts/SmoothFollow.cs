@@ -12,6 +12,8 @@ public class SmoothFollow : MonoBehaviour {
     // How much we 
     public float heightDamping = 2.0f;
     public float rotationDamping = 3.0f;
+    // Switch on off for rotation
+    public bool rotateIt = true;
 
     void LateUpdate() {
         // Early out if we don't have a target
@@ -25,7 +27,8 @@ public class SmoothFollow : MonoBehaviour {
         float currentHeight = transform.position.y;
 
         // Damp the rotation around the y-axis
-        currentRotationAngle = Mathf.LerpAngle(currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
+        if (rotateIt)
+            currentRotationAngle = Mathf.LerpAngle(currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
 
         // Damp the height
         currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.deltaTime);
