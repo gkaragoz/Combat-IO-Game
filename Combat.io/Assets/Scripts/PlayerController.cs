@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour {
     public float movementSpeed = 5f;  // Player base movement speed.
     public float rotationSpeed = 200f;// Player base rotation speed.
 
+    private Rigidbody _rb;            // Player's rigidbody.
     private Transform _mesh;          // Player's character which has selected Transform object.
 
     private void Awake() {
         SetMesh();
+        SetRigidbody();
     }
 
 	void Update () {
@@ -22,22 +24,22 @@ public class PlayerController : MonoBehaviour {
     // Player's abilities like movement, attack, die etc.
     #region Abilities
     private void Move() {
-        var horizontal = Input.GetAxisRaw("Horizontal") * Time.deltaTime * rotationSpeed;
-        var vertical = Input.GetAxisRaw("Vertical") * Time.deltaTime * movementSpeed;
+        var horizontal = Input.GetAxisRaw("Horizontal");
+        var vertical = Input.GetAxisRaw("Vertical");
 
-        transform.Rotate(0, horizontal, 0);
-        transform.Translate(0, 0, vertical);
+        transform.Rotate(0, horizontal * Time.deltaTime * rotationSpeed, 0);
+        _rb.velocity = transform.forward * vertical * movementSpeed;
     }
     #endregion
 
-    // Init functions like find meshes, has mesh etc.
+    // Init functions like find rigidbody, meshes, has mesh etc.
     #region Initializes
+    private void SetRigidbody() {
+        _rb = GetComponent<Rigidbody>();
+    }
+
     private void SetMesh() {
         _mesh = transform.Find("Mesh").GetChild(0);
-    }
-    
-    float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
     private bool HasMesh() {
