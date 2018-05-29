@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 4487336510589210}
   - component: {fileID: 33454250147517752}
   - component: {fileID: 23046019488240910}
-  - component: {fileID: 65955158375876748}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -102,7 +101,6 @@ GameObject:
   - component: {fileID: 4973939028449388}
   - component: {fileID: 33334379180265830}
   - component: {fileID: 23467055402189734}
-  - component: {fileID: 65917197862754266}
   m_Layer: 0
   m_Name: RightEye
   m_TagString: Untagged
@@ -171,7 +169,6 @@ GameObject:
   - component: {fileID: 4613719846829606}
   - component: {fileID: 33458332270637870}
   - component: {fileID: 23490151250091498}
-  - component: {fileID: 65537842100512408}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -240,7 +237,6 @@ GameObject:
   - component: {fileID: 4569060716134716}
   - component: {fileID: 33392427847074446}
   - component: {fileID: 23462673870098928}
-  - component: {fileID: 65256607338758958}
   m_Layer: 0
   m_Name: LeftEye
   m_TagString: Untagged
@@ -272,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4588210091683838}
   - component: {fileID: 114014518673247740}
+  - component: {fileID: 54837787352767082}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -880,18 +877,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1552632265790146}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65256607338758958
-BoxCollider:
+--- !u!54 &54837787352767082
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1898736087080248}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_GameObject: {fileID: 1995573322668498}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Mass: 10
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!65 &65312224726012806
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -900,7 +900,7 @@ BoxCollider:
   m_GameObject: {fileID: 1108792770096346}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -924,7 +924,7 @@ BoxCollider:
   m_GameObject: {fileID: 1546509464047468}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -936,19 +936,7 @@ BoxCollider:
   m_GameObject: {fileID: 1822631489367782}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65537842100512408
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1571923972848866}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -960,31 +948,7 @@ BoxCollider:
   m_GameObject: {fileID: 1552632265790146}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65917197862754266
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399603823756876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65955158375876748
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141431889182968}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

@@ -282,26 +282,6 @@ MonoBehaviour:
   heightDamping: 2
   rotationDamping: 3
   rotateIt: 0
---- !u!1 &717275002 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1995573322668498, guid: c93a4175cfea6e0459fee89dfb851a50,
-    type: 2}
-  m_PrefabInternal: {fileID: 1850757366}
---- !u!54 &717275005
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 717275002}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 5
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!4 &1061095342 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4799381936229820, guid: c93a4175cfea6e0459fee89dfb851a50,
