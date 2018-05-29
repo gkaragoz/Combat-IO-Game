@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		if (HasMesh()) {
             Move();
+            Rotate();
         }
 	}
 
@@ -27,8 +28,17 @@ public class PlayerController : MonoBehaviour {
         var horizontal = Input.GetAxisRaw("Horizontal");
         var vertical = Input.GetAxisRaw("Vertical");
 
-        transform.Rotate(0, horizontal * Time.deltaTime * rotationSpeed, 0);
-        _rb.velocity = transform.forward * vertical * movementSpeed;
+        _rb.velocity = new Vector3(horizontal, 0, vertical) * movementSpeed;
+    }
+
+    private void Rotate() {
+        int direction = 0;
+        if (Input.GetKey(KeyCode.Q))
+            direction = -1;
+        if (Input.GetKey(KeyCode.E))
+            direction = 1;
+
+        transform.Rotate(0, direction * Time.deltaTime * rotationSpeed, 0);
     }
     #endregion
 
