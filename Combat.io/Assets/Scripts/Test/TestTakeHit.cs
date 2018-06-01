@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent (typeof(TakeHit), typeof(Rigidbody))]
 public class TestTakeHit : MonoBehaviour {
 
-    public string AnimationTriggerString;
+    public string animationKeyString;
 
     private TakeHit _takeHit;
     private Animator _anim;
@@ -17,7 +17,7 @@ public class TestTakeHit : MonoBehaviour {
     }
 
     public void TakeHit() {
-        _anim.SetTrigger(AnimationTriggerString);
+        _anim.SetTrigger(animationKeyString);
         _takeHit.Action(_rb, Vector3.back);
     }
 
