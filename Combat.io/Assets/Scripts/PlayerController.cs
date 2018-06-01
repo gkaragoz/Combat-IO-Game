@@ -2,32 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent (typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour {
 
     public float movementSpeed = 5f;  // Player base movement speed.
     public float rotationSpeed = 200f;// Player base rotation speed.
+    public bool isRunning = false;    // Store running status of player.
 
     private Rigidbody _rb;            // Player's rigidbody.
     private Transform _mesh;          // Player's character which has selected Transform object.
+    private Animator _anim;           // Player's animator component.
 
     private void Awake() {
         SetMesh();
         SetRigidbody();
+        SetAnimator();
     }
 
 	void Update () {
 		if (HasMesh()) {
-            Move();
+            var horizontal = Input.GetAxisRaw("Horizontal");
+            var vertical = Input.GetAxisRaw("Vertical");
+
+            Move(horizontal, vertical);
+            Animating(horizontal, vertical);
             Rotate();
         }
 	}
 
     // Player's abilities like movement, attack, die etc.
     #region Abilities
-    private void Move() {
-        var horizontal = Input.GetAxisRaw("Horizontal");
-        var vertical = Input.GetAxisRaw("Vertical");
-
+    private void Move(float horizontal, float vertical) {
         _rb.velocity = new Vector3(horizontal, 0, vertical) * movementSpeed;
     }
 
@@ -44,6 +49,16 @@ public class PlayerController : MonoBehaviour {
 
     // Init functions like find rigidbody, meshes, has mesh etc.
     #region Initializes
+    private void Animating(float horizontal, float vertical) {
+        isRunning = horizontal != 0f || vertical != 0f;
+
+        _anim.SetBool("IsRunning", isRunning);
+    }
+
+    private void SetAnimator() {
+        _anim = GetComponentInChildren<Animator>();
+    }
+
     private void SetRigidbody() {
         _rb = GetComponent<Rigidbody>();
     }
