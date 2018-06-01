@@ -2,14 +2,14 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(TestMeleeAttack))]
-public class TestMeleeAttackEditor : Editor {
+[CustomEditor(typeof(TestUseShield))]
+public class TestUseShieldEditor : Editor {
 
     public override void OnInspectorGUI() {
         DrawDefaultInspector();
 
-        TestMeleeAttack myScript = (TestMeleeAttack)target;
-        if (GUILayout.Button("Attack")) {
+        TestUseShield myScript = (TestUseShield)target;
+        if (GUILayout.Button("Use Shield")) {
             myScript.Action();
         }
     }

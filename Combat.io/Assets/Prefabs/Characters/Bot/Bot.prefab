@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 114101324510575226}
   - component: {fileID: 114042387705686710}
   - component: {fileID: 114557090093244276}
+  - component: {fileID: 114710794685821424}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -1115,6 +1116,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationKeyString: Take_Hit_01
+--- !u!114 &114710794685821424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1702348772173372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4e991794d77e74a8a522f330c20693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationKeyString: IsUsingShield
+  isUsingShield: 0
 --- !u!212 &212320730684091734
 SpriteRenderer:
   m_ObjectHideFlags: 1
