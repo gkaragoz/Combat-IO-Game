@@ -18,7 +18,7 @@ public class TestTakeHit : MonoBehaviour {
 
     public void TakeHit() {
         _anim.SetTrigger(AnimationTriggerString);
-        _takeHit.Action(_rb, Vector3.back * 100f);
+        _takeHit.Action(_rb, Vector3.back);
     }
 
 }
